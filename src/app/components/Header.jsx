@@ -1,5 +1,6 @@
 "use client";
 
+import {SignedIn, SignedOut, SignInButton, UserButton} from '@clerk/nextjs'
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
@@ -43,14 +44,19 @@ export default function Header() {
                 href="#"
                 className="rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
               >
-                Sign In
+                <SignedIn>
+                  <UserButton/>
+                </SignedIn>
+                <SignedOut>
+                  <Link href="/sign-in">
+                  Sign In
+                  
+                  </Link>
+                {/* <SignInButton/> */}
+                </SignedOut>
+                
               </Link>
-              <Link
-                href="#"
-                className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
-              >
-                Sign Up
-              </Link>
+              
             </div>
           </nav>
 
@@ -88,14 +94,17 @@ export default function Header() {
                 href="#"
                 className="flex-1 rounded-full border px-4 py-2 text-center text-sm font-medium"
               >
-                Sign In
+                <SignedIn>
+                  <UserButton/>
+                </SignedIn>
+                <SignedOut>
+                <Link href="/sign-in">
+                  Sign In
+                  
+                  </Link>
+                </SignedOut>
               </Link>
-              <Link
-                href="#"
-                className="flex-1 rounded-full bg-indigo-600 px-4 py-2 text-center text-sm font-medium text-white"
-              >
-                Sign Up
-              </Link>
+              
             </div>
           </div>
         )}
