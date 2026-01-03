@@ -1,6 +1,6 @@
 "use client";
 
-import {SignedIn, SignedOut, SignInButton, UserButton} from '@clerk/nextjs'
+import {SignedIn, SignedOut, UserButton} from '@clerk/nextjs'
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
